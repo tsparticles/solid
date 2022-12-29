@@ -1,5 +1,5 @@
 {
-  "name": "@tsparticles/inferno-workspace",
+  "name": "@tsparticles/solid-workspace",
   "version": "0.0.0",
   "private": true,
   "scripts": {
