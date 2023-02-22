@@ -1,5 +1,5 @@
 {
-  "name": "@tsparticles/solid-workspace",
+  "name": "solid-particles-workspace",
   "version": "0.0.0",
   "private": true,
   "scripts": {
