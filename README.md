@@ -1,8 +1,8 @@
 [![banner](https://particles.js.org/images/banner3.png)](https://particles.js.org)
 
-# @tsparticles/solid
+# solid-particles
 
-[![npm](https://img.shields.io/npm/v/@tsparticles/solid)](https://www.npmjs.com/package/@tsparticles/solid) [![npm](https://img.shields.io/npm/dm/@tsparticles/solid)](https://www.npmjs.com/package/@tsparticles/solid) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
+[![npm](https://img.shields.io/npm/v/solid-particles)](https://www.npmjs.com/package/solid-particles) [![npm](https://img.shields.io/npm/dm/solid-particles)](https://www.npmjs.com/package/solid-particles) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
 
 Official [tsParticles](https://github.com/matteobruni/tsparticles) solid component
 
@@ -13,13 +13,13 @@ Official [tsParticles](https://github.com/matteobruni/tsparticles) solid compone
 ## Installation
 
 ```shell
-npm install @tsparticles/solid
+npm install solid-particles
 ```
 
 or
 
 ```shell
-yarn add @tsparticles/solid
+yarn add solid-particles
 ```
 
 ## How to use
@@ -31,7 +31,7 @@ Examples:
 _Remote url_
 
 ```javascript
-import Particles from "@tsparticles/solid";
+import Particles from "solid-particles";
 
 function App() {
     const particlesInit = async main => {
@@ -62,7 +62,7 @@ function App() {
 _Options object_
 
 ```javascript
-import Particles from "@tsparticles/solid";
+import Particles from "solid-particles";
 import { loadFull } from "tsparticles";
 
 class App extends Component {

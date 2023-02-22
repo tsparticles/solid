@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Particles from "@tsparticles/solid";
+import Particles from "solid-particles";
 import type { Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import { basic } from "tsparticles-demo-configs";

@@ -1,4 +1,4 @@
-// Type definitions for @tsparticles/solid
+// Type definitions for solid-particles
 // Project: https://github.com/matteobruni/tsparticles
 // Definitions by: Matteo Bruni <https://github.com/matteobruni>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
