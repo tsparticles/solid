@@ -80,16 +80,20 @@
     "author": "Matteo Bruni <matteo.bruni@me.com>",
     "license": "MIT",
     "homepage": "https://particles.js.org",
-    "funding": [
-        {
-            "type": "github",
-            "url": "https://github.com/sponsors/matteobruni"
-        },
-        {
-            "type": "buymeacoffee",
-            "url": "https://www.buymeacoffee.com/matteobruni"
-        }
-    ],
+	"funding": [
+		{
+			"type": "github",
+			"url": "https://github.com/sponsors/matteobruni"
+		},
+		{
+			"type": "github",
+			"url": "https://github.com/sponsors/tsparticles"
+		},
+		{
+			"type": "buymeacoffee",
+			"url": "https://www.buymeacoffee.com/matteobruni"
+		}
+	],
     "prettier": "@tsparticles/prettier-config",
     "peerDependencies": {
         "solid-js": ">=1.0.0"
