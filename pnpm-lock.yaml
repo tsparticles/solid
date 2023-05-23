@@ -29,8 +29,8 @@ importers:
         specifier: ^4.21.5
         version: 4.21.5
       component-register:
-        specifier: ^0.7.0
-        version: 0.7.1
+        specifier: ^0.8.0
+        version: 0.8.0
       solid-js:
         specifier: ^1.6.6
         version: 1.6.6
@@ -39,7 +39,7 @@ importers:
         version: link:../../components/solid
       solid-scripts:
         specifier: ^0.0.61
-        version: 0.0.61(browserslist@4.21.5)(component-register@0.7.1)(ts-node@10.9.1)(typescript@5.0.2)
+        version: 0.0.61(browserslist@4.21.5)(component-register@0.8.0)(ts-node@10.9.1)(typescript@5.0.2)
       tsparticles:
         specifier: ^2.9.3
         version: 2.9.3
@@ -5270,17 +5270,17 @@ packages:
     resolution: {integrity: sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg==}
     dev: true
 
-  /component-register-loader@0.0.2(component-register@0.7.1):
+  /component-register-loader@0.0.2(component-register@0.8.0):
     resolution: {integrity: sha512-eogeuum9O2fVMK1SZeCUdLYOh5IkSI6SUV13lyJ7npvPfF+wwUQ5Xx/gV+emZNgFchmji3ObA7zI0hD2mEy2Lg==}
     peerDependencies:
       component-register: 0.7.x
     dependencies:
-      component-register: 0.7.1
+      component-register: 0.8.0
       loader-utils: 1.4.2
     dev: true
 
-  /component-register@0.7.1:
-    resolution: {integrity: sha512-8cob6SUcl/y66nboT+4wXXOFvC/RYdyfcx7YA4KSvM3JQd1Oh/k8w+G4e960d4hPUgeM/jc5rF67pQDcmStQrg==}
+  /component-register@0.8.0:
+    resolution: {integrity: sha512-aZu8O9jxLwhAB8ptJsKn5KNxqzb/qh4VP4RuECg2IKdYXfk0R9u7XNhX2nOu/bK1pL7gc7Kz37gujihNEfLC/g==}
     dev: true
 
   /compressible@2.0.18:
@@ -13109,7 +13109,7 @@ packages:
     dependencies:
       csstype: 3.1.1
 
-  /solid-scripts@0.0.61(browserslist@4.21.5)(component-register@0.7.1)(ts-node@10.9.1)(typescript@5.0.2):
+  /solid-scripts@0.0.61(browserslist@4.21.5)(component-register@0.8.0)(ts-node@10.9.1)(typescript@5.0.2):
     resolution: {integrity: sha512-BGORs4exWVO3EtTK81h4hog/MpXkTm3jTNQtUZKslwac+S2k0lBjoKNhI5S6qdcv/5yHv9p15CTRyMwEPdzLBw==}
     hasBin: true
     dependencies:
@@ -13124,7 +13124,7 @@ packages:
       babel-loader: 8.3.0(@babel/core@7.20.7)(webpack@4.46.0)
       babel-preset-solid: 1.6.6(@babel/core@7.20.7)
       case-sensitive-paths-webpack-plugin: 2.4.0
-      component-register-loader: 0.0.2(component-register@0.7.1)
+      component-register-loader: 0.0.2(component-register@0.8.0)
       css-loader: 2.1.1(webpack@4.46.0)
       dotenv: 8.6.0
       dotenv-expand: 5.1.0
