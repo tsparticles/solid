@@ -114,14 +114,14 @@ importers:
         specifier: ^5.5.0
         version: 5.5.0(webpack@5.75.0)
       node-sass:
-        specifier: ^8.0.0
-        version: 8.0.0
+        specifier: ^9.0.0
+        version: 9.0.0
       prettier:
         specifier: ^2.8.3
         version: 2.8.4
       sass-loader:
         specifier: ^13.2.0
-        version: 13.2.0(node-sass@8.0.0)(webpack@5.75.0)
+        version: 13.2.0(node-sass@9.0.0)(webpack@5.75.0)
       source-map-loader:
         specifier: ^4.0.1
         version: 4.0.1(webpack@5.75.0)
@@ -10331,9 +10331,9 @@ packages:
     resolution: {integrity: sha512-dFSmB8fFHEH/s81Xi+Y/15DQY6VHW81nXRj86EMSL3lmuTmK1e+aT4wrFCkTbm+gSwkw4KpX+rT/pMM2c1mF+A==}
     dev: true
 
-  /node-sass@8.0.0:
-    resolution: {integrity: sha512-jPzqCF2/e6JXw6r3VxfIqYc8tKQdkj5Z/BDATYyG6FL6b/LuYBNFGFVhus0mthcWifHm/JzBpKAd+3eXsWeK/A==}
-    engines: {node: '>=14'}
+  /node-sass@9.0.0:
+    resolution: {integrity: sha512-yltEuuLrfH6M7Pq2gAj5B6Zm7m+gdZoG66wTqG6mIZV/zijq3M2OO2HswtT6oBspPyFhHDcaxWpsBm0fRNDHPg==}
+    engines: {node: '>=16'}
     hasBin: true
     requiresBuild: true
     dependencies:
@@ -12694,7 +12694,7 @@ packages:
       yargs: 17.6.2
     dev: true
 
-  /sass-loader@13.2.0(node-sass@8.0.0)(webpack@5.75.0):
+  /sass-loader@13.2.0(node-sass@9.0.0)(webpack@5.75.0):
     resolution: {integrity: sha512-JWEp48djQA4nbZxmgC02/Wh0eroSUutulROUusYJO9P9zltRbNN80JCBHqRGzjd4cmZCa/r88xgfkjGD0TXsHg==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -12715,7 +12715,7 @@ packages:
     dependencies:
       klona: 2.0.5
       neo-async: 2.6.2
-      node-sass: 8.0.0
+      node-sass: 9.0.0
       webpack: 5.75.0(webpack-cli@5.0.1)
     dev: true
 
