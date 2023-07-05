@@ -121,7 +121,7 @@
         "eslint-config-prettier": "^8.6.0",
         "html-webpack-plugin": "^5.5.0",
         "node-sass": "^9.0.0",
-        "prettier": "^2.8.3",
+        "prettier": "^3.0.0",
         "sass-loader": "^13.2.0",
         "source-map-loader": "^4.0.1",
         "style-loader": "^3.3.1",
