@@ -13,12 +13,11 @@ const Particles = (props: IParticlesProps): JSX.Element => {
 	const [init, setInit] = createSignal(!props.init);
 
 	try {
-		const id = props.id ?? "tsparticles";
-		const options = createMemo(() => props.params ?? props.options ?? {});
-
-		const refContainer = props.container as MutableRefObject<Container | undefined>;
-		const { className, canvasClassName, loaded, url, width, height } = props;
-		const [containerId, setContainerId] = createSignal(undefined as string | undefined);
+		const id = props.id ?? "tsparticles",
+			options = createMemo(() => props.params ?? props.options ?? {}),
+			refContainer = props.container as MutableRefObject<Container | undefined>,
+			{ className, canvasClassName, loaded, url, width, height } = props,
+			[containerId, setContainerId] = createSignal(undefined as string | undefined);
 
 		const cb = async (container?: Container) => {
 			if (refContainer) {
