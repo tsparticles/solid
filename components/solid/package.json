@@ -118,7 +118,7 @@
         "clean-webpack-plugin": "^4.0.0",
         "css-loader": "^6.7.3",
         "eslint": "^8.32.0",
-        "eslint-config-prettier": "^8.6.0",
+        "eslint-config-prettier": "^9.0.0",
         "html-webpack-plugin": "^5.5.0",
         "node-sass": "^9.0.0",
         "prettier": "^2.8.3",
