@@ -1,15 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
-import Particles from "solid-particles";
-import type { Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import { basic } from "tsparticles-demo-configs";
-
-async function particlesInit(engine: Engine): Promise<void> {
-    await loadFull(engine);
-}
+import configs from "@tsparticles/configs";
+import { createEffect, createSignal } from "solid-js";
+import Particles, { initParticlesEngine } from "@tsparticles/solid";
+import { Engine } from "@tsparticles/engine";
 
 function App() {
+    const [ init, setInit ] = createSignal<boolean>(false);
+
+    createEffect(() => {
+        if (init()) {
+            return;
+        }
+
+        initParticlesEngine(async (engine: Engine) => {
+            await loadFull(engine);
+        }).then(() => {
+            setInit(true);
+        })
+    });
+
     return (
         <div class="App">
             <header class="App-header">
@@ -26,7 +37,7 @@ function App() {
                     Learn Solid
                 </a>
             </header>
-            <Particles id="tsparticles" options={basic} init={particlesInit}/>
+            {init() && <Particles id="tsparticles" options={configs.basic}/>}
         </div>
     );
 }

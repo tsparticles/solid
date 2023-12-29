@@ -1,5 +1,5 @@
 {
-  "name": "solid-particles-workspace",
+  "name": "@tsparticles/solid-workspace",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,10 +7,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@commitlint/cli": "^17.3.0",
-    "@commitlint/config-conventional": "^17.3.0",
-    "husky": "^8.0.2",
-    "lerna": "^7.0.0"
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "husky": "^8.0.3",
+    "lerna": "^8.0.1"
   },
   "workspaces": [
     "apps/*",

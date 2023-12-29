@@ -4,14 +4,14 @@ const pkg = require("./package.json");
 module.exports = {
 	mode: "none",
 	entry: "./src/index.ts", // Point to main file
-	externals: [...Object.keys(pkg.dependencies), "solid-js", "solid-js/dom", "solid-js/web"],
+	externals: [ ...Object.keys(pkg.dependencies), "solid-js", "solid-js/dom", "solid-js/web" ],
 	output: {
 		path: __dirname + "/dist",
 		filename: "particles.js",
 		libraryTarget: "umd"
 	},
 	resolve: {
-		extensions: ['.js', '.jsx', '.ts', '.tsx']
+		extensions: [ '.js', '.jsx', '.ts', '.tsx' ]
 	},
 	performance: {
 		hints: false
