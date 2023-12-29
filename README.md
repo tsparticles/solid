@@ -1,8 +1,8 @@
 [![banner](https://particles.js.org/images/banner3.png)](https://particles.js.org)
 
-# solid-particles
+# @tsparticles/solid
 
-[![npm](https://img.shields.io/npm/v/solid-particles)](https://www.npmjs.com/package/solid-particles) [![npm](https://img.shields.io/npm/dm/solid-particles)](https://www.npmjs.com/package/solid-particles) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
+[![npm](https://img.shields.io/npm/v/@tsparticles/solid)](https://www.npmjs.com/package/@tsparticles/solid) [![npm](https://img.shields.io/npm/dm/@tsparticles/solid)](https://www.npmjs.com/package/@tsparticles/solid) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
 
 Official [tsParticles](https://github.com/matteobruni/tsparticles) solid component
 
@@ -13,13 +13,13 @@ Official [tsParticles](https://github.com/matteobruni/tsparticles) solid compone
 ## Installation
 
 ```shell
-npm install solid-particles
+npm install @tsparticles/solid
 ```
 
 or
 
 ```shell
-yarn add solid-particles
+yarn add @tsparticles/solid
 ```
 
 ## How to use
@@ -31,18 +31,62 @@ Examples:
 _Remote url_
 
 ```javascript
-import Particles from "solid-particles";
+import Particles from "@tsparticles/solid";
 
 function App() {
-    const particlesInit = async main => {
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        await loadFull(main);
-    };
+    const [ init, setInit ] = createSignal(false);
+
+    createEffect(() => {
+        if (init()) {
+            return;
+        }
+
+        initParticlesEngine(async (engine) => {
+            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+            // starting from v2 you can add only the features you need reducing the bundle size
+            await loadFull(engine);
+        }).then(() => {
+            setInit(true);
+        })
+    });
 
     return (
         <div class="App">
-            <Particles
+            {init() && <Particles
+                id="tsparticles"
+                init={particlesInit}
+                url="https://foo.bar/particles.json"
+            />}
+        </div>
+    );
+}
+```
+
+_Options object_
+
+```javascript
+import Particles from "@tsparticles/solid";
+
+function App() {
+    const [ init, setInit ] = createSignal(false);
+
+    createEffect(() => {
+        if (init()) {
+            return;
+        }
+
+        initParticlesEngine(async (engine) => {
+            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+            // starting from v2 you can add only the features you need reducing the bundle size
+            await loadFull(engine);
+        }).then(() => {
+            setInit(true);
+        })
+    });
+
+    return (
+        <div class="App">
+            {init() && <Particles
                 id="tsparticles"
                 init={particlesInit}
                 options={{
@@ -53,141 +97,26 @@ function App() {
                         enable: true,
                     },
                 }}
-            />
+            />}
         </div>
     );
 }
 ```
 
-_Options object_
-
-```javascript
-import Particles from "solid-particles";
-import { loadFull } from "tsparticles";
-
-class App extends Component {
-    constructor(props) {
-        super(props);
-
-        this.particlesInit = this.particlesInit.bind(this);
-        this.particlesLoaded = this.particlesLoaded.bind(this);
-    }
-
-    async particlesInit(main) {
-        console.log(main);
-
-        // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        await loadFull(main);
-    }
-
-    particlesLoaded(container) {
-        console.log(container);
-    }
-
-    render() {
-        return (
-            <Particles
-                id="tsparticles"
-                init={this.particlesInit}
-                loaded={this.particlesLoaded}
-                options={{
-                    background: {
-                        color: {
-                            value: "#0d47a1",
-                        },
-                    },
-                    fpsLimit: 120,
-                    interactivity: {
-                        events: {
-                            onClick: {
-                                enable: true,
-                                mode: "push",
-                            },
-                            onHover: {
-                                enable: true,
-                                mode: "repulse",
-                            },
-                            resize: true,
-                        },
-                        modes: {
-                            bubble: {
-                                distance: 400,
-                                duration: 2,
-                                opacity: 0.8,
-                                size: 40,
-                            },
-                            push: {
-                                quantity: 4,
-                            },
-                            repulse: {
-                                distance: 200,
-                                duration: 0.4,
-                            },
-                        },
-                    },
-                    particles: {
-                        color: {
-                            value: "#ffffff",
-                        },
-                        links: {
-                            color: "#ffffff",
-                            distance: 150,
-                            enable: true,
-                            opacity: 0.5,
-                            width: 1,
-                        },
-                        move: {
-                            direction: "none",
-                            enable: true,
-                            outModes: {
-                                default: "bounce",
-                            },
-                            random: false,
-                            speed: 6,
-                            straight: false,
-                        },
-                        number: {
-                            density: {
-                                enable: true,
-                                area: 800,
-                            },
-                            value: 80,
-                        },
-                        opacity: {
-                            value: 0.5,
-                        },
-                        shape: {
-                            type: "circle",
-                        },
-                        size: {
-                            value: { min: 1, max: 5 },
-                        },
-                    },
-                    detectRetina: true,
-                }}
-            />
-        );
-    }
-}
-```
-
 ### Props
 
-| Prop            | Type     | Definition                                                                                                                                          |
-| --------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id              | string   | The id of the element.                                                                                                                              |
-| width           | string   | The width of the canvas.                                                                                                                            |
-| height          | string   | The height of the canvas.                                                                                                                           |
-| options         | object   | The options of the particles instance.                                                                                                              |
-| url             | string   | The remote options url, called using an AJAX request                                                                                                |
-| style           | object   | The style of the canvas element.                                                                                                                    |
-| className       | string   | The class name of the canvas wrapper.                                                                                                               |
-| canvasClassName | string   | the class name of the canvas.                                                                                                                       |
-| container       | object   | The instance of the [particles container](https://particles.js.org/docs/modules/Core_Container.html)                                                |
-| init            | function | This function is called after the tsParticles instance initialization, the instance is the parameter and you can load custom presets or shapes here |
-| loaded          | function | This function is called when particles are correctly loaded in canvas, the current container is the parameter and you can customize it here         |
+| Prop            | Type     | Definition                                                                                                                                  |
+|-----------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| id              | string   | The id of the element.                                                                                                                      |
+| width           | string   | The width of the canvas.                                                                                                                    |
+| height          | string   | The height of the canvas.                                                                                                                   |
+| options         | object   | The options of the particles instance.                                                                                                      |
+| url             | string   | The remote options url, called using an AJAX request                                                                                        |
+| style           | object   | The style of the canvas element.                                                                                                            |
+| className       | string   | The class name of the canvas wrapper.                                                                                                       |
+| canvasClassName | string   | the class name of the canvas.                                                                                                               |
+| container       | object   | The instance of the [particles container](https://particles.js.org/docs/modules/Core_Container.html)                                        |
+| particlesloaded | function | This function is called when particles are correctly loaded in canvas, the current container is the parameter and you can customize it here |
 
 Find your parameters configuration [here](https://particles.js.org).
 

@@ -12,5 +12,5 @@ export interface IParticlesProps {
 	className?: string;
 	canvasClassName?: string;
 	container?: { current: Container };
-	loaded?: (container: Container) => Promise<void>;
+	particlesLoaded?: (container: Container) => Promise<void>;
 }
