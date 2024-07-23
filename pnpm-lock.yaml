@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@commitlint/cli':
         specifier: ^18.4.3
-        version: 18.4.3(typescript@5.3.3)
+        version: 18.4.3(typescript@5.5.4)
       '@commitlint/config-conventional':
         specifier: ^18.4.3
         version: 18.4.3
@@ -43,13 +43,13 @@ importers:
         version: 4.22.2
       component-register:
         specifier: ^0.8.3
-        version: 0.8.3
+        version: 0.8.5
       solid-js:
         specifier: ^1.8.7
         version: 1.8.7
       solid-scripts:
         specifier: ^0.0.61
-        version: 0.0.61(browserslist@4.22.2)(component-register@0.8.3)(typescript@5.3.3)
+        version: 0.0.61(browserslist@4.22.2)(component-register@0.8.5)(typescript@5.3.3)
       tsparticles:
         specifier: ^3.0.3
         version: 3.0.3
@@ -2681,14 +2681,14 @@ packages:
       minimist: 1.2.7
     dev: true
 
-  /@commitlint/cli@18.4.3(typescript@5.3.3):
+  /@commitlint/cli@18.4.3(typescript@5.5.4):
     resolution: {integrity: sha512-zop98yfB3A6NveYAZ3P1Mb6bIXuCeWgnUfVNkH4yhIMQpQfzFwseadazOuSn0OOfTt0lWuFauehpm9GcqM5lww==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
       '@commitlint/format': 18.4.3
       '@commitlint/lint': 18.4.3
-      '@commitlint/load': 18.4.3(typescript@5.3.3)
+      '@commitlint/load': 18.4.3(typescript@5.5.4)
       '@commitlint/read': 18.4.3
       '@commitlint/types': 18.4.3
       execa: 5.1.1
@@ -2758,7 +2758,7 @@ packages:
       '@commitlint/types': 18.4.3
     dev: false
 
-  /@commitlint/load@18.4.3(typescript@5.3.3):
+  /@commitlint/load@18.4.3(typescript@5.5.4):
     resolution: {integrity: sha512-v6j2WhvRQJrcJaj5D+EyES2WKTxPpxENmNpNG3Ww8MZGik3jWRXtph0QTzia5ZJyPh2ib5aC/6BIDymkUUM58Q==}
     engines: {node: '>=v18'}
     dependencies:
@@ -2768,8 +2768,8 @@ packages:
       '@commitlint/types': 18.4.3
       '@types/node': 18.11.18
       chalk: 4.1.2
-      cosmiconfig: 8.3.6(typescript@5.3.3)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@18.11.18)(cosmiconfig@8.3.6)(typescript@5.3.3)
+      cosmiconfig: 8.3.6(typescript@5.5.4)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@18.11.18)(cosmiconfig@8.3.6)(typescript@5.5.4)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -3022,7 +3022,7 @@ packages:
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       exit: 0.1.2
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jest-changed-files: 26.6.2
       jest-config: 26.6.3
       jest-haste-map: 26.6.2
@@ -3100,7 +3100,7 @@ packages:
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
       glob: 7.2.3
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       istanbul-lib-coverage: 3.2.0
       istanbul-lib-instrument: 4.0.3
       istanbul-lib-report: 3.0.0
@@ -3132,7 +3132,7 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       callsites: 3.1.0
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       source-map: 0.6.1
     dev: true
 
@@ -5953,7 +5953,7 @@ packages:
       chownr: 1.1.4
       figgy-pudding: 3.5.2
       glob: 7.2.3
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       infer-owner: 1.0.4
       lru-cache: 5.1.1
       mississippi: 3.0.0
@@ -5974,7 +5974,7 @@ packages:
       figgy-pudding: 3.5.2
       fs-minipass: 2.1.0
       glob: 7.2.3
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       infer-owner: 1.0.4
       lru-cache: 5.1.1
       minipass: 3.3.6
@@ -6263,6 +6263,23 @@ packages:
       fsevents: 2.3.3
     dev: true
 
+  /chokidar@3.6.0:
+    resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
+    engines: {node: '>= 8.10.0'}
+    requiresBuild: true
+    dependencies:
+      anymatch: 3.1.3
+      braces: 3.0.2
+      glob-parent: 5.1.2
+      is-binary-path: 2.1.0
+      is-glob: 4.0.3
+      normalize-path: 3.0.0
+      readdirp: 3.6.0
+    optionalDependencies:
+      fsevents: 2.3.3
+    dev: true
+    optional: true
+
   /chownr@1.1.4:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
     dev: true
@@ -6541,17 +6558,17 @@ packages:
     resolution: {integrity: sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg==}
     dev: true
 
-  /component-register-loader@0.0.2(component-register@0.8.3):
+  /component-register-loader@0.0.2(component-register@0.8.5):
     resolution: {integrity: sha512-eogeuum9O2fVMK1SZeCUdLYOh5IkSI6SUV13lyJ7npvPfF+wwUQ5Xx/gV+emZNgFchmji3ObA7zI0hD2mEy2Lg==}
     peerDependencies:
       component-register: 0.7.x
     dependencies:
-      component-register: 0.8.3
+      component-register: 0.8.5
       loader-utils: 1.4.2
     dev: true
 
-  /component-register@0.8.3:
-    resolution: {integrity: sha512-/0u8ov0WPWi2FL78rgB9aFOcfY8pJT4jP/l9NTOukGNLVQ6hk35sEJE1RkEnNQU3yk48Qr7HlDQjRQKEVfgeWg==}
+  /component-register@0.8.5:
+    resolution: {integrity: sha512-LNs+ZD2f+pyYkB0VBSVcfIS5CcH1imBSdNlJw5YHfRckIDIL7eAj5twMp9rQLmoCOtwsk610HSy22VeTyQ/4sQ==}
     dev: true
 
   /compressible@2.0.18:
@@ -6785,7 +6802,7 @@ packages:
   /core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
 
-  /cosmiconfig-typescript-loader@5.0.0(@types/node@18.11.18)(cosmiconfig@8.3.6)(typescript@5.3.3):
+  /cosmiconfig-typescript-loader@5.0.0(@types/node@18.11.18)(cosmiconfig@8.3.6)(typescript@5.5.4):
     resolution: {integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==}
     engines: {node: '>=v16'}
     peerDependencies:
@@ -6794,9 +6811,9 @@ packages:
       typescript: '>=4'
     dependencies:
       '@types/node': 18.11.18
-      cosmiconfig: 8.3.6(typescript@5.3.3)
+      cosmiconfig: 8.3.6(typescript@5.5.4)
       jiti: 1.21.0
-      typescript: 5.3.3
+      typescript: 5.5.4
     dev: false
 
   /cosmiconfig@5.2.1:
@@ -6834,6 +6851,22 @@ packages:
       parse-json: 5.2.0
       path-type: 4.0.0
       typescript: 5.3.3
+    dev: false
+
+  /cosmiconfig@8.3.6(typescript@5.5.4):
+    resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      typescript: '>=4.9.5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      import-fresh: 3.3.0
+      js-yaml: 4.1.0
+      parse-json: 5.2.0
+      path-type: 4.0.0
+      typescript: 5.5.4
     dev: false
 
   /create-ecdh@4.0.4:
@@ -7606,7 +7639,7 @@ packages:
     resolution: {integrity: sha512-Nv9m36S/vxpsI+Hc4/ZGRs0n9mXqSWGGq49zxb/cJfPAQMbUtttJAlNPS4AQzaBdw/pKskw5bMbekT/Y7W/Wlg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       memory-fs: 0.5.0
       tapable: 1.1.3
     dev: true
@@ -8489,7 +8522,7 @@ packages:
   /fs-write-stream-atomic@1.0.10:
     resolution: {integrity: sha512-gehEzmPn2nAwr39eay+x3X34Ra+M2QlVUTLhkXPjWdeO8RF9kszk116avgBJM3ZyNHgHXBNx+VmPaFC36k0PzA==}
     dependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       iferr: 0.1.5
       imurmurhash: 0.1.4
       readable-stream: 2.3.7
@@ -8506,7 +8539,7 @@ packages:
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
-      nan: 2.17.0
+      nan: 2.20.0
     dev: true
     optional: true
 
@@ -8865,7 +8898,6 @@ packages:
 
   /graceful-fs@4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
-    dev: true
 
   /graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
@@ -8902,7 +8934,7 @@ packages:
       source-map: 0.6.1
       wordwrap: 1.0.0
     optionalDependencies:
-      uglify-js: 3.17.4
+      uglify-js: 3.19.0
     dev: false
 
   /hard-rejection@2.1.0:
@@ -10058,7 +10090,7 @@ packages:
       '@jest/types': 26.6.2
       chalk: 4.1.2
       exit: 0.1.2
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       import-local: 3.1.0
       is-ci: 2.0.0
       jest-config: 26.6.3
@@ -10090,7 +10122,7 @@ packages:
       chalk: 4.1.2
       deepmerge: 4.2.2
       glob: 7.2.3
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jest-environment-jsdom: 26.6.2
       jest-environment-node: 26.6.2
       jest-get-type: 26.3.0
@@ -10273,7 +10305,7 @@ packages:
       '@jest/types': 26.6.2
       '@types/stack-utils': 2.0.1
       chalk: 4.1.2
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       micromatch: 4.0.5
       pretty-format: 26.6.2
       slash: 3.0.0
@@ -10288,7 +10320,7 @@ packages:
       '@jest/types': 27.5.1
       '@types/stack-utils': 2.0.1
       chalk: 4.1.2
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       micromatch: 4.0.5
       pretty-format: 27.5.1
       slash: 3.0.0
@@ -10357,7 +10389,7 @@ packages:
     dependencies:
       '@jest/types': 26.6.2
       chalk: 4.1.2
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jest-pnp-resolver: 1.2.3(jest-resolve@26.6.2)
       jest-util: 26.6.2
       read-pkg-up: 7.0.1
@@ -10377,7 +10409,7 @@ packages:
       chalk: 4.1.2
       emittery: 0.7.2
       exit: 0.1.2
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jest-config: 26.6.3
       jest-docblock: 26.0.0
       jest-haste-map: 26.6.2
@@ -10416,7 +10448,7 @@ packages:
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
       glob: 7.2.3
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jest-config: 26.6.3
       jest-haste-map: 26.6.2
       jest-message-util: 26.6.2
@@ -10455,7 +10487,7 @@ packages:
       '@types/prettier': 2.7.2
       chalk: 4.1.2
       expect: 26.6.2
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jest-diff: 26.6.2
       jest-get-type: 26.3.0
       jest-haste-map: 26.6.2
@@ -10489,7 +10521,7 @@ packages:
       '@types/node': 20.10.5
       chalk: 4.1.2
       ci-info: 3.7.0
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       picomatch: 2.3.1
     dev: true
 
@@ -10744,7 +10776,7 @@ packages:
   /jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
-      graceful-fs: 4.2.11
+      graceful-fs: 4.2.10
     dev: true
 
   /jsonfile@6.1.0:
@@ -10752,7 +10784,7 @@ packages:
     dependencies:
       universalify: 2.0.0
     optionalDependencies:
-      graceful-fs: 4.2.11
+      graceful-fs: 4.2.10
 
   /jsonify@0.0.1:
     resolution: {integrity: sha512-2/Ki0GcmuqSrgFyelQq9M05y7PS0mEwuIzrf3f1fPqkVDVRvZrPZtVSMHxdgo8Aq0sxAOb/cr2aqqA3LeWHVPg==}
@@ -11743,6 +11775,12 @@ packages:
   /nan@2.17.0:
     resolution: {integrity: sha512-2ZTgtl0nJsO0KQCjEpxcIr5D+Yv90plTitZt9JBfQvVJDS5seMl3FOvsh3+9CoYWXf/1l5OaZzzF6nDm4cagaQ==}
     dev: true
+
+  /nan@2.20.0:
+    resolution: {integrity: sha512-bk3gXBZDGILuuo/6sKtr0DQmSThYHLtNCdSdXk9YkxD/jK6X2vmCyyXBBxyqZ4XcnzTyYEAThfX3DCEnLf6igw==}
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /nanoid@3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
@@ -14886,7 +14924,7 @@ packages:
       csstype: 3.1.1
       seroval: 0.15.1
 
-  /solid-scripts@0.0.61(browserslist@4.22.2)(component-register@0.8.3)(typescript@5.3.3):
+  /solid-scripts@0.0.61(browserslist@4.22.2)(component-register@0.8.5)(typescript@5.3.3):
     resolution: {integrity: sha512-BGORs4exWVO3EtTK81h4hog/MpXkTm3jTNQtUZKslwac+S2k0lBjoKNhI5S6qdcv/5yHv9p15CTRyMwEPdzLBw==}
     hasBin: true
     dependencies:
@@ -14901,7 +14939,7 @@ packages:
       babel-loader: 8.3.0(@babel/core@7.20.7)(webpack@4.46.0)
       babel-preset-solid: 1.6.6(@babel/core@7.20.7)
       case-sensitive-paths-webpack-plugin: 2.4.0
-      component-register-loader: 0.0.2(component-register@0.8.3)
+      component-register-loader: 0.0.2(component-register@0.8.5)
       css-loader: 2.1.1(webpack@4.46.0)
       dotenv: 8.6.0
       dotenv-expand: 5.1.0
@@ -15895,8 +15933,14 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  /uglify-js@3.17.4:
-    resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}
+  /typescript@5.5.4:
+    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: false
+
+  /uglify-js@3.19.0:
+    resolution: {integrity: sha512-wNKHUY2hYYkf6oSFfhwwiHo4WCHzHmzcXsqXYTN9ja3iApYIFbb2U6ics9hBcYLHcYGQoAlwnZlTrf3oF+BL/Q==}
     engines: {node: '>=0.8.0'}
     hasBin: true
     requiresBuild: true
@@ -16257,10 +16301,10 @@ packages:
   /watchpack@1.7.5:
     resolution: {integrity: sha512-9P3MWk6SrKjHsGkLT2KHXdQ/9SNkyoJbabxnKOoJepsvJjJG8uYTR3yTPxPQvNDI3w4Nz1xnE0TLHK4RIVe/MQ==}
     dependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       neo-async: 2.6.2
     optionalDependencies:
-      chokidar: 3.5.3
+      chokidar: 3.6.0
       watchpack-chokidar2: 2.0.1
     transitivePeerDependencies:
       - supports-color
