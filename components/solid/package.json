@@ -2,9 +2,25 @@
 	"name": "@tsparticles/solid",
 	"version": "3.0.0",
 	"description": "Official tsParticles Solid Component - Easily create highly customizable particle, confetti and fireworks animations and use them as animated backgrounds for your website. Ready to use components available also for React, Vue.js (2.x and 3.x), Angular, Svelte, jQuery, Preact, Inferno, Riot.js.",
-	"main": "dist/particles.js",
+	"type": "module",
+	"// This is optional but this remove the need to manually configure the source input for rollup": "",
+  "source": "src/index.tsx",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/types/index.d.ts",
+	"files": ["dist"],
+  "exports": {
+    ".": {
+      "solid": "./dist/source/index.jsx",
+      "import": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "node": "./dist/cjs/index.js"
+    }
+  },
 	"scripts": {
-		"build": "pnpm run prettify:src && pnpm run lint && webpack --mode production && pnpm run prettify:readme",
+		"build": "rollup -c",
+		"build:w": "pnpm run prettify:src && pnpm run lint && webpack --mode production && pnpm run prettify:readme",
 		"build:ci": "pnpm run prettify:ci:src && pnpm run lint:ci && webpack --mode production && pnpm run prettify:ci:readme",
 		"build:debug": "pnpm run prettify:src && pnpm run lint && webpack && pnpm run prettify:readme",
 		"check": "tsc",
@@ -102,35 +118,15 @@
 		"solid-js": ">=1.0.0"
 	},
 	"dependencies": {
-		"@tsparticles/engine": "^3.0.3",
-		"fast-deep-equal": "^3.1.3",
-		"solid-js": "^1.8.7"
+		"@tsparticles/engine": "^3.0.3"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.23.6",
-		"@babel/plugin-proposal-class-properties": "^7.18.6",
-		"@babel/plugin-transform-runtime": "^7.23.6",
-		"@babel/preset-env": "^7.23.6",
-		"@babel/preset-typescript": "^7.23.3",
-		"@babel/runtime": "^7.23.6",
-		"@tsparticles/prettier-config": "^2.0.1",
-		"@typescript-eslint/eslint-plugin": "^6.0.0",
-		"@typescript-eslint/parser": "^6.0.0",
-		"babel-loader": "^9.1.3",
-		"babel-preset-solid": "^1.8.6",
-		"clean-webpack-plugin": "^4.0.0",
-		"css-loader": "^6.8.1",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.0.0",
-		"html-webpack-plugin": "^5.6.0",
-		"node-sass": "^9.0.0",
 		"prettier": "^3.0.0",
-		"sass-loader": "^13.3.3",
-		"source-map-loader": "^4.0.2",
-		"style-loader": "^3.3.3",
-		"typescript": "^5.0.0",
-		"webpack": "^5.89.0",
-		"webpack-cli": "^5.1.4",
-		"webpack-dev-server": "^4.15.1"
+		"rollup": "^4.21.1",
+		"rollup-preset-solid": "^2.0.1",
+		"solid-js": "^1.8.7",
+		"typescript": "^5.0.0"
 	}
 }

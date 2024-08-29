@@ -2,7 +2,9 @@
 	"compilerOptions": {
 		"pretty": true,
 		"target": "es6",
-		"module": "esnext",
+		"module": "ESNext",
+		"declaration": true,
+    "declarationDir": "dist/types",
 		"allowSyntheticDefaultImports": true,
 		"preserveConstEnums": true,
 		"sourceMap": true,
@@ -27,10 +29,46 @@
 		"importHelpers": false,
 		"esModuleInterop": true
 	},
-	"files": [
-		"./node_modules/solid-scripts/types/solid-app.d.ts"
-	],
+	// "files": [
+	// 	"./node_modules/solid-scripts/types/solid-app.d.ts"
+	// ],
 	"include": [
 		"src"
 	]
+
+
+	// "compilerOptions": {
+  //   "target": "ESNext",
+  //   "module": "ESNext",
+  //   "jsx": "preserve",
+  //   "jsxImportSource": "solid-js",
+  //   "declaration": true,
+  //   "declarationDir": "dist/types",
+  //   "outDir": "dist",
+  //   "esModuleInterop": true,
+  //   "moduleResolution": "node",
+  //   "skipLibCheck": true,
+  //   "strict": true
+  // },
+  // "include": ["src/**/*"],
+  // "exclude": ["node_modules", "dist"]
+
+
+	// "compilerOptions": {
+	// 	"target": "ESNext",
+	// 	"module": "ESNext",
+	// 	"jsx": "preserve", // or "react-jsx" in newer TypeScript versions
+	// 	"jsxImportSource": "solid-js",
+	// 	"moduleResolution": "node",
+	// 	"declaration": true,
+	// 	"declarationDir": "dist/types",
+	// 	"strict": true,
+	// 	"esModuleInterop": true,
+	// 	"skipLibCheck": true,
+	// 	"forceConsistentCasingInFileNames": true,
+	// 	"isolatedModules": true,
+	// 	"allowSyntheticDefaultImports": true
+	// },
+	// "include": ["src/**/*"],
+	// "exclude": ["node_modules", "dist"]
 }

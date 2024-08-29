@@ -2,34 +2,25 @@ import { tsParticles, Container } from "@tsparticles/engine";
 import type { IParticlesProps } from "./IParticlesProps";
 import { createEffect, createMemo, createSignal, onCleanup, JSX } from "solid-js";
 
-interface MutableRefObject<T> {
-	current: T | null;
-}
-
 /**
  * @param (props:IParticlesProps) Particles component properties
  */
 const Particles = (props: IParticlesProps): JSX.Element => {
 	try {
-		const id = props.id ?? "tsparticles",
-			options = createMemo(() => props.params ?? props.options ?? {}),
-			refContainer = props.container as MutableRefObject<Container | undefined>,
-			{ className, canvasClassName, loaded, url, width, height } = props,
-			[containerId, setContainerId] = createSignal(undefined as symbol | undefined);
+		const id = props.id ?? "tsparticles";
+		const options = createMemo(() => props.params ?? props.options ?? {});
+		const [containerId, setContainerId] = createSignal(undefined as symbol | undefined);
 
 		const cb = async (container?: Container) => {
-			if (refContainer) {
-				refContainer.current = container;
-			}
-
 			setContainerId(container?.id);
 
-			if (loaded && container) {
-				await loaded(container);
+			if (props.particlesLoaded && container) {
+				await props.particlesLoaded(container);
 			}
 		};
 
 		createEffect(async () => {
+			console.log("effect", tsParticles.dom());
 			let container = tsParticles.dom().find(t => t.id === containerId());
 
 			container?.destroy();
@@ -37,7 +28,7 @@ const Particles = (props: IParticlesProps): JSX.Element => {
 			container = await tsParticles.load({
 				id,
 				options: options(),
-				url: url,
+				url: props.url,
 			});
 
 			await cb(container);
@@ -52,13 +43,13 @@ const Particles = (props: IParticlesProps): JSX.Element => {
 		});
 
 		return (
-			<div class={className ?? ""} id={id}>
+			<div class={props.className ?? ""} id={id}>
 				<canvas
-					class={canvasClassName ?? ""}
+					class={props.canvasClassName ?? ""}
 					style={{
 						...props.style,
-						width,
-						height,
+						width: props.width,
+						height: props.height,
 					}}
 				/>
 			</div>
