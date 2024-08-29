@@ -1,11 +1,12 @@
 import { Engine, tsParticles } from "@tsparticles/engine";
+import { createResource, Resource } from "solid-js";
 import type { IParticlesProps } from "./IParticlesProps";
 import Particles from "./Particles";
 
-async function initParticlesEngine(cb: (engine: Engine) => Promise<void>): Promise<void> {
+function initParticlesEngine(cb: (engine: Engine) => Promise<void>): Resource<true> {
     tsParticles.init();
-
-    await cb(tsParticles);
+    const [resource] = createResource(() => cb(tsParticles).then(() => true as const));
+    return resource;
 }
 
 export default Particles;
