@@ -2,7 +2,7 @@ import configs from "@tsparticles/configs";
 import type { Component } from 'solid-js';
 import { createSignal, Show } from "solid-js";
 import { loadFull } from "tsparticles";
-import Particles, { initParticlesEngine } from "../../../components/solid/dist";
+import Particles, { initParticlesEngine } from "@tsparticles/solid";
 
 const App: Component = () => {
   const init = initParticlesEngine(loadFull)
