@@ -20,7 +20,6 @@
     "@tsparticles/engine": "^3.0.3",
     "@tsparticles/solid": "workspace:*",
     "solid-js": "^1.8.11",
-    "solid-library": "workspace:*",
     "tsparticles": "^3.5.0"
   }
 }
