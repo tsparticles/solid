@@ -14,7 +14,7 @@ describe("Particles", () => {
     it("renders a Particles-component", () => {
         createRoot(() => {
             const container = (<Particles />) as HTMLDivElement;
-            expect(container.outerHTML).toBe("<div><canvas></canvas></div>");
+            expect(container.outerHTML).toBe('<div id="tsparticles"><canvas></canvas></div>');
         });
     });
 });

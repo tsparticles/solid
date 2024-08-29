@@ -12,6 +12,6 @@ describe("environment", () => {
 describe("Particles", () => {
     it("renders a Particles-component", () => {
         const string = renderToString(() => <Particles />);
-        expect(string).toBe("<div><canvas></canvas></div>");
+        expect(string).toBe('<div id="tsparticles"><canvas style=""></canvas></div>');
     });
 });
