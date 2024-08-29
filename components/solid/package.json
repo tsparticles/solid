@@ -44,11 +44,9 @@
         "lint:types": "tsc --noEmit",
         "update-deps": "pnpm up -Li"
     },
-    "dependencies": {
-        "@tsparticles/engine": "^3.0.3"
-    },
     "peerDependencies": {
-        "solid-js": "^1.6.0"
+        "solid-js": "^1.6.0",
+        "@tsparticles/engine": "^3.0.3"
     },
     "devDependencies": {
         "@types/node": "^20.12.12",
