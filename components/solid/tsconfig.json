@@ -1,74 +1,22 @@
 {
-	"compilerOptions": {
-		"pretty": true,
-		"target": "es6",
-		"module": "ESNext",
-		"declaration": true,
-    "declarationDir": "dist/types",
-		"allowSyntheticDefaultImports": true,
-		"preserveConstEnums": true,
-		"sourceMap": true,
-		"moduleResolution": "node",
-		"lib": [
-			"es2015",
-			"dom"
-		],
-		"types": [
-			"solid-js",
-			"solid-js/web"
-		],
-		"jsx": "preserve",
-		"jsxImportSource": "solid-js",
-		"noUnusedLocals": true,
-		"baseUrl": "./src",
-		"noEmit": true,
-		"skipLibCheck": true,
-		"noUnusedParameters": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-		"importHelpers": false,
-		"esModuleInterop": true
-	},
-	// "files": [
-	// 	"./node_modules/solid-scripts/types/solid-app.d.ts"
-	// ],
-	"include": [
-		"src"
-	]
-
-
-	// "compilerOptions": {
-  //   "target": "ESNext",
-  //   "module": "ESNext",
-  //   "jsx": "preserve",
-  //   "jsxImportSource": "solid-js",
-  //   "declaration": true,
-  //   "declarationDir": "dist/types",
-  //   "outDir": "dist",
-  //   "esModuleInterop": true,
-  //   "moduleResolution": "node",
-  //   "skipLibCheck": true,
-  //   "strict": true
-  // },
-  // "include": ["src/**/*"],
-  // "exclude": ["node_modules", "dist"]
-
-
-	// "compilerOptions": {
-	// 	"target": "ESNext",
-	// 	"module": "ESNext",
-	// 	"jsx": "preserve", // or "react-jsx" in newer TypeScript versions
-	// 	"jsxImportSource": "solid-js",
-	// 	"moduleResolution": "node",
-	// 	"declaration": true,
-	// 	"declarationDir": "dist/types",
-	// 	"strict": true,
-	// 	"esModuleInterop": true,
-	// 	"skipLibCheck": true,
-	// 	"forceConsistentCasingInFileNames": true,
-	// 	"isolatedModules": true,
-	// 	"allowSyntheticDefaultImports": true
-	// },
-	// "include": ["src/**/*"],
-	// "exclude": ["node_modules", "dist"]
+  "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "types": [],
+    "baseUrl": "."
+  },
+  "exclude": ["node_modules", "dist", "./dev"]
 }

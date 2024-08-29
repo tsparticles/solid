@@ -1,132 +1,94 @@
 {
-	"name": "@tsparticles/solid",
-	"version": "3.0.0",
-	"description": "Official tsParticles Solid Component - Easily create highly customizable particle, confetti and fireworks animations and use them as animated backgrounds for your website. Ready to use components available also for React, Vue.js (2.x and 3.x), Angular, Svelte, jQuery, Preact, Inferno, Riot.js.",
-	"type": "module",
-	"// This is optional but this remove the need to manually configure the source input for rollup": "",
-  "source": "src/index.tsx",
-	"main": "dist/cjs/index.js",
-	"module": "dist/esm/index.js",
-	"types": "dist/types/index.d.ts",
-	"files": ["dist"],
-  "exports": {
-    ".": {
-      "solid": "./dist/source/index.jsx",
-      "import": "./dist/esm/index.js",
-      "browser": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "node": "./dist/cjs/index.js"
+    "name": "@tsparticles/solid",
+    "version": "3.0.0",
+    "description": "Official tsParticles Solid Component - Easily create highly customizable particle, confetti and fireworks animations and use them as animated backgrounds for your website. Ready to use components available also for React, Vue.js (2.x and 3.x), Angular, Svelte, jQuery, Preact, Inferno, Riot.js.",
+    "license": "MIT",
+    "author": "Matteo Bruni <matteo.bruni@me.com>",
+    "contributors": [],
+    "files": [
+        "dist"
+    ],
+    "private": false,
+    "sideEffects": false,
+    "type": "module",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "browser": {},
+    "exports": {
+        "solid": {
+            "development": "./dist/dev.jsx",
+            "import": "./dist/index.jsx"
+        },
+        "development": {
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/dev.js"
+            }
+        },
+        "import": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "typesVersions": {},
+    "scripts": {
+        "build": "tsup",
+        "test": "concurrently pnpm:test:*",
+        "test:client": "vitest",
+        "test:ssr": "pnpm run test:client --mode ssr",
+        "prepublishOnly": "pnpm build",
+        "format": "prettier --ignore-path .gitignore -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
+        "lint": "concurrently pnpm:lint:*",
+        "lint:code": "eslint --ignore-path .gitignore --max-warnings 0 src/**/*.{js,ts,tsx,jsx}",
+        "lint:types": "tsc --noEmit",
+        "update-deps": "pnpm up -Li"
+    },
+    "peerDependencies": {
+        "solid-js": "^1.6.0",
+        "@tsparticles/engine": "^3.0.3"
+    },
+    "devDependencies": {
+        "@types/node": "^20.12.12",
+        "@typescript-eslint/eslint-plugin": "^7.9.0",
+        "@typescript-eslint/parser": "^7.9.0",
+        "concurrently": "^8.2.2",
+        "esbuild": "^0.21.3",
+        "esbuild-plugin-solid": "^0.6.0",
+        "eslint": "^8.56.0",
+        "eslint-plugin-eslint-comments": "^3.2.0",
+        "eslint-plugin-no-only-tests": "^3.1.0",
+        "jsdom": "^24.0.0",
+        "prettier": "3.0.0",
+        "solid-js": "^1.8.17",
+        "tsup": "^8.0.2",
+        "tsup-preset-solid": "^2.2.0",
+        "typescript": "^5.4.5",
+        "vite": "^5.2.11",
+        "vite-plugin-solid": "^2.10.2",
+        "vitest": "^1.6.0"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/matteobruni"
+        },
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/tsparticles"
+        },
+        {
+            "type": "buymeacoffee",
+            "url": "https://www.buymeacoffee.com/matteobruni"
+        }
+    ],
+    "prettier": "@tsparticles/prettier-config",
+    "keywords": [
+        "solid"
+    ],
+    "packageManager": "pnpm@9.1.1",
+    "engines": {
+        "node": ">=18",
+        "pnpm": ">=9.0.0"
     }
-  },
-	"scripts": {
-		"build": "rollup -c",
-		"build:w": "pnpm run prettify:src && pnpm run lint && webpack --mode production && pnpm run prettify:readme",
-		"build:ci": "pnpm run prettify:ci:src && pnpm run lint:ci && webpack --mode production && pnpm run prettify:ci:readme",
-		"build:debug": "pnpm run prettify:src && pnpm run lint && webpack && pnpm run prettify:readme",
-		"check": "tsc",
-		"lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
-		"lint:ci": "eslint src --ext .js,.jsx,.ts,.tsx",
-		"prettify:ci:src": "prettier --check ./src/*",
-		"prettify:ci:readme": "prettier --check ./README.md",
-		"prettify:src": "prettier --write ./src/*",
-		"prettify:readme": "prettier --write ./README.md",
-		"prepack": "pnpm run build"
-	},
-	"bugs": {
-		"url": "https://github.com/tsparticles/solid/issues"
-	},
-	"repository": {
-		"url": "https://github.com/tsparticles/solid",
-		"directory": "components/solid",
-		"type": "git"
-	},
-	"keywords": [
-		"front-end",
-		"frontend",
-		"tsparticles",
-		"particles.js",
-		"particlesjs",
-		"particles",
-		"particle",
-		"canvas",
-		"jsparticles",
-		"xparticles",
-		"particles-js",
-		"particles-bg",
-		"particles-bg-vue",
-		"particles-ts",
-		"particles.ts",
-		"react-particles-js",
-		"react-particles.js",
-		"react-particles",
-		"react",
-		"reactjs",
-		"vue-particles",
-		"ngx-particles",
-		"angular-particles",
-		"particleground",
-		"vue",
-		"vuejs",
-		"preact",
-		"preactjs",
-		"jquery",
-		"angularjs",
-		"angular",
-		"typescript",
-		"javascript",
-		"animation",
-		"web",
-		"html5",
-		"web-design",
-		"webdesign",
-		"css",
-		"html",
-		"css3",
-		"animated",
-		"background",
-		"confetti",
-		"canvas",
-		"fireworks",
-		"fireworks-js",
-		"confetti-js",
-		"confettijs",
-		"fireworksjs",
-		"canvas-confetti"
-	],
-	"author": "Matteo Bruni <matteo.bruni@me.com>",
-	"license": "MIT",
-	"homepage": "https://particles.js.org",
-	"funding": [
-		{
-			"type": "github",
-			"url": "https://github.com/sponsors/matteobruni"
-		},
-		{
-			"type": "github",
-			"url": "https://github.com/sponsors/tsparticles"
-		},
-		{
-			"type": "buymeacoffee",
-			"url": "https://www.buymeacoffee.com/matteobruni"
-		}
-	],
-	"prettier": "@tsparticles/prettier-config",
-	"publishConfig": {
-		"access": "public"
-	},
-	"peerDependencies": {
-		"solid-js": ">=1.0.0"
-	},
-	"dependencies": {
-		"@tsparticles/engine": "^3.0.3"
-	},
-	"devDependencies": {
-		"eslint": "^8.56.0",
-		"eslint-config-prettier": "^9.0.0",
-		"prettier": "^3.0.0",
-		"rollup": "^4.21.1",
-		"rollup-preset-solid": "^2.0.1",
-		"solid-js": "^1.8.7",
-		"typescript": "^5.0.0"
-	}
 }

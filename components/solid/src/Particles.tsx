@@ -1,62 +1,44 @@
-import { tsParticles, Container } from "@tsparticles/engine";
+import { tsParticles } from "@tsparticles/engine";
+import { createEffect, createResource, JSX, mergeProps, on, onCleanup, onMount } from "solid-js";
 import type { IParticlesProps } from "./IParticlesProps";
-import { createEffect, createMemo, createSignal, onCleanup, JSX } from "solid-js";
 
 /**
  * @param (props:IParticlesProps) Particles component properties
  */
 const Particles = (props: IParticlesProps): JSX.Element => {
-	try {
-		const id = props.id ?? "tsparticles";
-		const options = createMemo(() => props.params ?? props.options ?? {});
-		const [containerId, setContainerId] = createSignal(undefined as symbol | undefined);
+    const config = mergeProps({ id: "tsparticles" }, props);
 
-		const cb = async (container?: Container) => {
-			setContainerId(container?.id);
+    onMount(() => {
+        const [container] = createResource(
+            () => ({
+                id: config.id,
+                options: config.params ?? config.options ?? {},
+                url: config.url,
+            }),
+            data => tsParticles.load(data),
+        );
 
-			if (props.particlesLoaded && container) {
-				await props.particlesLoaded(container);
-			}
-		};
+        createEffect(
+            on(container, container => {
+                if (!container) return;
+                config.particlesLoaded?.(container);
+                onCleanup(() => container.destroy());
+            }),
+        );
+    });
 
-		createEffect(async () => {
-			console.log("effect", tsParticles.dom());
-			let container = tsParticles.dom().find(t => t.id === containerId());
-
-			container?.destroy();
-
-			container = await tsParticles.load({
-				id,
-				options: options(),
-				url: props.url,
-			});
-
-			await cb(container);
-		});
-
-		onCleanup(() => {
-			const container = tsParticles.dom().find(t => t.id === containerId());
-
-			container?.destroy();
-
-			setContainerId(undefined);
-		});
-
-		return (
-			<div class={props.className ?? ""} id={id}>
-				<canvas
-					class={props.canvasClassName ?? ""}
-					style={{
-						...props.style,
-						width: props.width,
-						height: props.height,
-					}}
-				/>
-			</div>
-		);
-	} catch (e) {
-		return <div />;
-	}
+    return (
+        <div class={config.className} id={config.id}>
+            <canvas
+                class={config.canvasClassName}
+                style={{
+                    ...config.style,
+                    width: config.width,
+                    height: config.height,
+                }}
+            />
+        </div>
+    );
 };
 
 export default Particles;
