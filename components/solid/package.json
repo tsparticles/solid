@@ -5,16 +5,13 @@
     "license": "MIT",
     "author": "Matteo Bruni <matteo.bruni@me.com>",
     "homepage": "https://particles.js.org",
-    "private": false,
-    "sideEffects": false,
     "type": "module",
     "main": "./dist/index.js",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
-    "engines": {
-        "node": ">=18",
-        "pnpm": ">=9.0.0"
-    },
+    "publishConfig": {
+		"access": "public"
+	},
     "files": [
         "dist"
     ],
@@ -129,8 +126,8 @@
         "prepublishOnly": "pnpm build"
     },
     "peerDependencies": {
-        "solid-js": "^1.6.0",
-        "@tsparticles/engine": "^3.0.3"
+        "solid-js": ">=1.0.0",
+        "@tsparticles/engine": ">=1.0.0"
     },
     "devDependencies": {
         "@types/node": "^20.12.12",
