@@ -1,3 +1,11 @@
+
+This project was bootstrapped by following the
+[Solid Getting Started](https://www.solidjs.com/guides/getting-started) guide
+using to folloiwng command.
+```
+npx degit solidjs/templates/ts solid
+```
+
 ## Usage
 
 Those templates dependencies are maintained via [pnpm](https://pnpm.io) via
@@ -11,8 +19,8 @@ template.
 npm install # or pnpm install or yarn install
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with
-us on our [Discord](https://discord.com/invite/solidjs)
+Learn more on the [Solid Website](https://solidjs.com) and come chat with us
+on our [Discord](https://discord.com/invite/solidjs)
 
 ## Available Scripts
 
