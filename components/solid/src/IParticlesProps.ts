@@ -9,8 +9,8 @@ export interface IParticlesProps {
     url?: string;
     params?: ISourceOptions;
     style?: JSX.CSSProperties;
-    className?: string;
-    canvasClassName?: string;
+    class?: string;
+    canvasClass?: string;
     container?: { current: Container };
     particlesLoaded?: (container: Container) => Promise<void>;
 }

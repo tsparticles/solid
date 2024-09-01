@@ -28,9 +28,9 @@ const Particles = (props: IParticlesProps): JSX.Element => {
     });
 
     return (
-        <div class={config.className} id={config.id}>
+        <div class={config.class} id={config.id}>
             <canvas
-                class={config.canvasClassName}
+                class={config.canvasClass}
                 style={{
                     ...config.style,
                     width: config.width,
