@@ -3,7 +3,7 @@
 
 This project was bootstrapped by following the
 [Solid Getting Started](https://www.solidjs.com/guides/getting-started) guide
-using to folloiwng command.
+using to following command.
 
 ```bash
 npx degit solidjs/templates/ts solid
