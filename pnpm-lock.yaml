@@ -15,8 +15,8 @@ importers:
         specifier: ^18.4.3
         version: 18.6.3
       husky:
-        specifier: ^9.0.0
-        version: 9.1.5
+        specifier: 9.0.1
+        version: 9.0.1
       lerna:
         specifier: ^8.0.1
         version: 8.1.8(encoding@0.1.13)
@@ -2281,8 +2281,8 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
 
-  husky@9.1.5:
-    resolution: {integrity: sha512-rowAVRUBfI0b4+niA4SJMhfQwc107VLkBUgEYYAOQAbqDCnra1nYh83hF/MDmhYs9t9n1E3DuKOrs2LYNC+0Ag==}
+  husky@9.0.1:
+    resolution: {integrity: sha512-rXCT8yF2v3awSG03AG6IgICDhJ+m8o3jL1ROwsT4nQZ6urEyKSj0IWFDIh5YC2zgZeAxWksNMbN6rYY4BE1Zrw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6626,7 +6626,7 @@ snapshots:
 
   human-signals@5.0.0: {}
 
-  husky@9.1.5: {}
+  husky@9.0.1: {}
 
   iconv-lite@0.4.24:
     dependencies:
