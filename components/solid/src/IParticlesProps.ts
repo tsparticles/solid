@@ -12,5 +12,6 @@ export interface IParticlesProps {
     class?: string;
     canvasClass?: string;
     container?: { current: Container };
+    // prettier-ignore
     particlesLoaded?: (container: Container) => Promise<void>;
 }
