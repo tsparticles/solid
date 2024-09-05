@@ -127,10 +127,11 @@
         "prepublishOnly": "pnpm build"
     },
     "peerDependencies": {
-        "solid-js": ">=1.0.0",
-        "@tsparticles/engine": ">=1.0.0"
+        "@tsparticles/engine": ">=1.0.0",
+        "solid-js": ">=1.0.0"
     },
     "devDependencies": {
+        "@tsparticles/prettier-config": "^2.1.6",
         "@types/node": "^20.12.12",
         "@typescript-eslint/eslint-plugin": "^7.9.0",
         "@typescript-eslint/parser": "^7.9.0",
