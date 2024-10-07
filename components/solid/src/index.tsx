@@ -5,9 +5,11 @@ import Particles from "./Particles";
 
 // prettier-ignore
 function initParticlesEngine(cb: (engine: Engine) => Promise<void>): Resource<true> {
-    tsParticles.init();
-    const [resource] = createResource(() => cb(tsParticles).then(() => true as const));
-    return resource;
+  tsParticles.init();
+
+  const [resource] = createResource(() => cb(tsParticles).then(() => true as const));
+
+  return resource;
 }
 
 export default Particles;
