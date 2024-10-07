@@ -1,71 +1,44 @@
-import { tsParticles, Container } from "@tsparticles/engine";
+import { tsParticles } from "@tsparticles/engine";
+import { createEffect, createResource, JSX, mergeProps, on, onCleanup, onMount } from "solid-js";
 import type { IParticlesProps } from "./IParticlesProps";
-import { createEffect, createMemo, createSignal, onCleanup, JSX } from "solid-js";
-
-interface MutableRefObject<T> {
-	current: T | null;
-}
 
 /**
  * @param (props:IParticlesProps) Particles component properties
  */
 const Particles = (props: IParticlesProps): JSX.Element => {
-	try {
-		const id = props.id ?? "tsparticles",
-			options = createMemo(() => props.params ?? props.options ?? {}),
-			refContainer = props.container as MutableRefObject<Container | undefined>,
-			{ className, canvasClassName, loaded, url, width, height } = props,
-			[containerId, setContainerId] = createSignal(undefined as symbol | undefined);
+    const config = mergeProps({ id: "tsparticles" }, props);
 
-		const cb = async (container?: Container) => {
-			if (refContainer) {
-				refContainer.current = container;
-			}
+    onMount(() => {
+        const [container] = createResource(
+            () => ({
+                id: config.id,
+                options: config.params ?? config.options ?? {},
+                url: config.url,
+            }),
+            data => tsParticles.load(data),
+        );
 
-			setContainerId(container?.id);
+        createEffect(
+            on(container, container => {
+                if (!container) return;
+                config.particlesLoaded?.(container);
+                onCleanup(() => container.destroy());
+            }),
+        );
+    });
 
-			if (loaded && container) {
-				await loaded(container);
-			}
-		};
-
-		createEffect(async () => {
-			let container = tsParticles.dom().find(t => t.id === containerId());
-
-			container?.destroy();
-
-			container = await tsParticles.load({
-				id,
-				options: options(),
-				url: url,
-			});
-
-			await cb(container);
-		});
-
-		onCleanup(() => {
-			const container = tsParticles.dom().find(t => t.id === containerId());
-
-			container?.destroy();
-
-			setContainerId(undefined);
-		});
-
-		return (
-			<div class={className ?? ""} id={id}>
-				<canvas
-					class={canvasClassName ?? ""}
-					style={{
-						...props.style,
-						width,
-						height,
-					}}
-				/>
-			</div>
-		);
-	} catch (e) {
-		return <div />;
-	}
+    return (
+        <div class={config.class} id={config.id}>
+            <canvas
+                class={config.canvasClass}
+                style={{
+                    ...config.style,
+                    width: config.width,
+                    height: config.height,
+                }}
+            />
+        </div>
+    );
 };
 
 export default Particles;

@@ -1,45 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import { loadFull } from "tsparticles";
 import configs from "@tsparticles/configs";
-import { createEffect, createSignal } from "solid-js";
+import type { Component } from 'solid-js';
+import { createSignal, Show } from "solid-js";
+import { loadFull } from "tsparticles";
 import Particles, { initParticlesEngine } from "@tsparticles/solid";
-import { Engine } from "@tsparticles/engine";
 
-function App() {
-    const [ init, setInit ] = createSignal<boolean>(false);
+const App: Component = () => {
+  const init = initParticlesEngine(loadFull)
+  const [config, setConfig] = createSignal(configs.basic)
 
-    createEffect(() => {
-        if (init()) {
-            return;
-        }
+  setTimeout(() => setConfig(configs.absorbers), 1000)
 
-        initParticlesEngine(async (engine: Engine) => {
-            await loadFull(engine);
-        }).then(() => {
-            setInit(true);
-        })
-    });
-
-    return (
-        <div class="App">
-            <header class="App-header">
-                <img src={logo} class="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    class="App-link"
-                    href="https://github.com/ryansolid/solid"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn Solid
-                </a>
-            </header>
-            {init() && <Particles id="tsparticles" options={configs.basic}/>}
-        </div>
-    );
-}
+  return (
+    <Show when={init()}>
+      <Particles id="tsparticles" options={config()}/>
+    </Show>
+  );
+};
 
 export default App;
