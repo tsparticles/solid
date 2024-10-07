@@ -1,31 +1,25 @@
 {
-  "name": "@tsparticles/solid-demo",
-  "version": "3.0.0",
-  "private": true,
-  "devDependencies": {
-    "@tsparticles/configs": "^3.0.3",
-    "@tsparticles/engine": "^3.0.3",
-    "@tsparticles/solid": "workspace:^",
-    "@types/jest": "^29.5.11",
-    "@types/node": "^20.10.5",
-    "browserslist": "^4.22.2",
-    "component-register": "^0.8.3",
-    "solid-js": "^1.8.7",
-    "solid-scripts": "^0.0.61",
-    "tsparticles": "^3.0.3",
-    "typescript": "^5.0.0"
-  },
+  "name": "vite-template-solid",
+  "version": "0.0.0",
+  "description": "",
   "scripts": {
-    "start": "env NODE_OPTIONS=--openssl-legacy-provider solid-scripts start",
-    "build": "env NODE_OPTIONS=--openssl-legacy-provider solid-scripts build",
-    "build:ci": "env NODE_OPTIONS=--openssl-legacy-provider solid-scripts build",
-    "test": "solid-scripts test"
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
-  "browserslist": [
-    "Chrome 74",
-    "Firefox 63",
-    "Safari 11",
-    "Edge 17",
-    "Node 10"
-  ]
+  "license": "MIT",
+  "devDependencies": {
+    "solid-devtools": "^0.29.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11",
+    "vite-plugin-solid": "^2.8.2"
+  },
+  "dependencies": {
+    "@tsparticles/configs": "^3.5.0",
+    "@tsparticles/engine": "^3.5.0",
+    "@tsparticles/solid": "workspace:*",
+    "solid-js": "^1.8.11",
+    "tsparticles": "^3.5.0"
+  }
 }
