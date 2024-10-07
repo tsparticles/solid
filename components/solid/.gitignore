@@ -1,6 +1,6 @@
 node_modules
 dist
-gitignore
+.DS_Store
 
 # tsup
 tsup.config.bundled_*.{m,c,}s
