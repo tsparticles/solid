@@ -7,11 +7,9 @@ export interface IParticlesProps {
     height?: string;
     options?: ISourceOptions;
     url?: string;
-    params?: ISourceOptions;
     style?: JSX.CSSProperties;
     class?: string;
     canvasClass?: string;
-    container?: { current: Container };
     // prettier-ignore
     particlesLoaded?: (container: Container) => Promise<void>;
 }

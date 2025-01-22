@@ -1,8 +1,8 @@
 import configs from "@tsparticles/configs";
+import Particles, { initParticlesEngine } from "@tsparticles/solid";
 import type { Component } from 'solid-js';
 import { createSignal, Show } from "solid-js";
 import { loadFull } from "tsparticles";
-import Particles, { initParticlesEngine } from "@tsparticles/solid";
 
 const App: Component = () => {
   const init = initParticlesEngine(loadFull)

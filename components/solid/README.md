@@ -30,75 +30,41 @@ Examples:
 
 _Remote url_
 
-```javascript
-import Particles from "@tsparticles/solid";
+```tsx
+import { Show } from "solid-js";
+import { loadFull } from "tsparticles";
+import Particles, { initParticlesEngine } from "@tsparticles/solid";
 
-function App() {
-    const [init, setInit] = createSignal(false);
-
-    createEffect(() => {
-        if (init()) {
-            return;
-        }
-
-        initParticlesEngine(async engine => {
-            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-            // starting from v2 you can add only the features you need reducing the bundle size
-            await loadFull(engine);
-        }).then(() => {
-            setInit(true);
-        });
-    });
+const App = () => {
+    const [init] = createResource(() => initParticlesEngine(loadFull));
 
     return (
-        <div class="App">
-            {init() && <Particles id="tsparticles" init={particlesInit} url="https://foo.bar/particles.json" />}
-        </div>
+        <Show when={init()}>
+            <Particles id="tsparticles" url="https://foo.bar/particles.json" />
+        </Show>
     );
-}
+};
 ```
 
 _Options object_
 
 ```javascript
-import Particles from "@tsparticles/solid";
+import configs from "@tsparticles/configs";
+import { Show } from "solid-js";
+import { loadFull } from "tsparticles";
+import Particles, { initParticlesEngine } from "@tsparticles/solid";
 
-function App() {
-    const [init, setInit] = createSignal(false);
-
-    createEffect(() => {
-        if (init()) {
-            return;
-        }
-
-        initParticlesEngine(async engine => {
-            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-            // starting from v2 you can add only the features you need reducing the bundle size
-            await loadFull(engine);
-        }).then(() => {
-            setInit(true);
-        });
-    });
+const App = () => {
+    const init = initParticlesEngine(loadFull);
 
     return (
-        <div class="App">
-            {init() && (
-                <Particles
-                    id="tsparticles"
-                    init={particlesInit}
-                    options={{
-                        background: {
-                            color: "#000",
-                        },
-                        fullScreen: {
-                            enable: true,
-                        },
-                    }}
-                />
-            )}
-        </div>
+        <Show when={init()}>
+            <Particles id="tsparticles" options={configs.basic} />
+        </Show>
     );
-}
+};
+
+export default App;
 ```
 
 ### Props
@@ -111,9 +77,8 @@ function App() {
 | options         | object   | The options of the particles instance.                                                                                                      |
 | url             | string   | The remote options url, called using an AJAX request                                                                                        |
 | style           | object   | The style of the canvas element.                                                                                                            |
-| className       | string   | The class name of the canvas wrapper.                                                                                                       |
-| canvasClassName | string   | the class name of the canvas.                                                                                                               |
-| container       | object   | The instance of the [particles container](https://particles.js.org/docs/modules/Core_Container.html)                                        |
+| class           | string   | The class name of the canvas wrapper.                                                                                                       |
+| canvasClass     | string   | the class name of the canvas.                                                                                                               |
 | particlesloaded | function | This function is called when particles are correctly loaded in canvas, the current container is the parameter and you can customize it here |
 
 Find your parameters configuration [here](https://particles.js.org).
