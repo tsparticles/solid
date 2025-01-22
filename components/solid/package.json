@@ -117,7 +117,7 @@
         "test:ssr": "pnpm run test:client --mode ssr",
         "lint": "concurrently \"pnpm:lint:code --fix\" pnpm:lint:types",
         "lint:ci": "concurrently pnpm:lint:code pnpm:lint:types",
-        "lint:code": "eslint --ignore-path .gitignore --max-warnings 0 src/**/*.{js,ts,tsx,jsx}",
+        "lint:code": "eslint --ignore-path .gitignore --max-warnings 0 src/**/*.{ts,tsx}",
         "lint:types": "tsc --noEmit",
         "update-deps": "pnpm up -Li",
         "prettify": "prettier --write \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"README.md\"",

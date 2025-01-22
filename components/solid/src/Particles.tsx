@@ -6,13 +6,13 @@ import type { IParticlesProps } from "./IParticlesProps";
  * @param (props:IParticlesProps) Particles component properties
  */
 const Particles = (props: IParticlesProps): JSX.Element => {
-    const config = mergeProps({ id: "tsparticles" }, props);
+    const config = mergeProps({ id: "tsparticles", options: {} }, props);
 
     onMount(() => {
         const [container] = createResource(
             () => ({
                 id: config.id,
-                options: config.params ?? config.options ?? {},
+                options: config.options,
                 url: config.url,
             }),
             data => tsParticles.load(data),
