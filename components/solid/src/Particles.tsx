@@ -12,7 +12,7 @@ const Particles = (props: IParticlesProps): JSX.Element => {
         const [container] = createResource(
             () => ({
                 id: config.id,
-                options: config.params ?? config.options ?? {},
+                options: config.options ?? {},
                 url: config.url,
             }),
             data => tsParticles.load(data),
