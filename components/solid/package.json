@@ -126,11 +126,11 @@
     "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
-    "@tsparticles/engine": ">=3",
+    "@tsparticles/engine": ">=3 <5",
     "solid-js": ">=1.0.0"
   },
   "devDependencies": {
-    "@tsparticles/engine": "^3.6.0-beta.0",
+    "@tsparticles/engine": "^4.0.0-beta.11",
     "@tsparticles/prettier-config": "^2.1.6",
     "@types/node": "^22.7.5",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
