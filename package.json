@@ -3,14 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "lerna run build"
+    "build": "pnpm run build:lerna",
+    "build:ci": "lerna run build:ci --stream --no-private || pnpm run build:lerna",
+    "build:lerna": "lerna run build --stream --no-private",
+    "build:nx": "nx run-many -t build --all"
   },
   "license": "MIT",
   "dependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "husky": "^9.1.6",
-    "lerna": "^8.1.8"
+    "lerna": "^8.1.8",
+    "nx": "^20.7.2"
   },
   "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
 }
