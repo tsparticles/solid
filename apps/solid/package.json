@@ -16,7 +16,7 @@
     "vite-plugin-solid": "^2.10.2"
   },
   "dependencies": {
-    "@tsparticles/configs": "^3.6.0-beta.0",
+    "@tsparticles/configs": "^3.9.1",
     "@tsparticles/engine": "^3.9.1",
     "@tsparticles/solid": "workspace:*",
     "solid-js": "^1.9.1",
